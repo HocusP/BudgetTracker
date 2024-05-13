@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { Button, Container } from 'react-bootstrap';
+import { Stack } from 'react-bootstrap';
+import BudgetCard from './Components/BudgetCard';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return <Container className='my-4'>
+
+    <Stack direction="horiozontal" gap="2" className='mb-4'>
+      <h1 className='me-auto'> Budget Tracker </h1>
+      <Button variant="primary">Add Budget</Button>
+      <Button variant="outline-primary">Add expense</Button>
+    </Stack>
+
+    <div style={{
+      display: 'grid', 
+      gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+      gap: '1rem', 
+      alignItems: "flex-start"
+    }}>
+      <BudgetCard 
+      name="Entertainment" 
+      gray 
+      amount={500} 
+      max={1000}
+      ></BudgetCard>
     </div>
-  );
+
+  </Container>
 }
 
 export default App;
