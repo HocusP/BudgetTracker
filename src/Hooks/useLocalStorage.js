@@ -1,4 +1,5 @@
 //Implement firebase in here??
+import { useState, useEffect } from "react"
 
 function useLocalStorage(key, defaultlValue) {
     const [value, setValue] = useState (() => {
