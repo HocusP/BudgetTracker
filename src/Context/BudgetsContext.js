@@ -40,8 +40,7 @@ export const BudgetsProvider = ({ children }) => {
    function deleteExpenses({id}){
     setExpenses (prevExpenses => {
         return prevExpenses.filter(expenses => expenses.id !== id)
-   })
-
+   })}
 
     return <BudgetsContext.Provider value={{
         budgets,
@@ -52,4 +51,4 @@ export const BudgetsProvider = ({ children }) => {
         deleteBudget,
         deleteExpenses
     }}> {children} </BudgetsContext.Provider>
-}}
+}
