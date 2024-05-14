@@ -11,7 +11,7 @@ function App() {
       <Button variant="primary">Add Budget</Button>
       <Button variant="outline-primary">Add expense</Button>
     </Stack>
-
+    
     <div style={{
       display: 'grid', 
       gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',

@@ -52,4 +52,4 @@ export const BudgetsProvider = ({ children }) => {
         deleteBudget,
         deleteExpenses
     }}> {children} </BudgetsContext.Provider>
-}
+}}

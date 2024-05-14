@@ -16,5 +16,4 @@ function useLocalStorage(key, defaultlValue) {
         localStorage.setItem(key, JSON.stringify(value))
     }) [key, value]
     return [ value, setValue ]
-
     }
