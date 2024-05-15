@@ -1,7 +1,7 @@
 //Implement firebase in here??
 import { useState, useEffect } from "react"
 
-function useLocalStorage(key, defaultlValue) {
+export default function useLocalStorage(key, defaultlValue) {
     const [value, setValue] = useState (() => {
         const jsonValue = localStorage.getItem(key)
         if(jsonValue != null) return JSON.parse(jsonValue)
@@ -15,6 +15,6 @@ function useLocalStorage(key, defaultlValue) {
 
     useEffect(() => {
         localStorage.setItem(key, JSON.stringify(value))
-    }) [key, value]
+    }, [key, value])
     return [ value, setValue ]
     }

@@ -26,7 +26,6 @@ export default function BudgetCard({ name, amount, max, gray }) {
                 <ProgressBar
                     className="rounded-pill"
                     variant={getProgressBarVariant(amount, max)}
-                    max={1000}
                     min={0}
                     max={max}
                     now={amount}
