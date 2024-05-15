@@ -9,8 +9,15 @@ import { BudgetsProvider, useBudgets } from './Context/BudgetsContext';
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false)
+  const [showAddExpoenseModal, setShowAddExpenseModal] = useState(false)
+  const [AddExpenseModalBugetId, setAddExpenseModalBugetId] = useState()
   const { budgets, getBudgetExpenses } = useBudgets()
 
+
+  function openAddExpenseModal(budgetId) {
+    setShowAddExpenseModal(true)
+    setAddExpenseModalBugetId(budgetId)
+  }
 
   return (
     <>
@@ -21,7 +28,7 @@ function App() {
           <Button variant="primary" onClick={() => setShowAddBudgetModal(true)}>
             Add Budget
           </Button>
-          <Button variant="outline-primary">Add expense</Button>
+          <Button variant="outline-primary" onClick={openAddExpenseModal}>Add expense</Button>
         </Stack>
 
         <div style={{
@@ -39,17 +46,22 @@ function App() {
                 key={budget.id}
                 name={budget.name}
                 amount={amount}
-                max={budget.max} />
+                max={budget.max} 
+                onAddExpenseClick = {() => openAddExpenseModal(budget.id)}
+                />
             )
           })}
         </div>
       </Container>
-      <AddBudgetModal show={showAddBudgetModal} handleClose={() =>
+      <AddBudgetModal 
+        show={showAddBudgetModal} handleClose={() =>
         setShowAddBudgetModal(false)}
       />
 
-      <AddExpenseModal show={true} 
-      //handleClose={() => setShowAddBudgetModal(false)}
+      <AddExpenseModal 
+      show={showAddExpoenseModal} 
+      defaultBudgetId={AddExpenseModalBugetId}
+      handleClose={() => setShowAddExpenseModal(false)}
         
       />
 

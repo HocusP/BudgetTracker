@@ -1,6 +1,6 @@
 import { Modal, Form, Button } from "react-bootstrap";
 import { useRef } from "react";
-import { useBudgets } from "../Context/BudgetsContext";
+import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "../Context/BudgetsContext";
 
 
 export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) {
@@ -16,7 +16,7 @@ export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) 
                 amount: parseFloat(amountRef.current.value),
                 budgetId: budgetIdRef.current.value,
             })
-        //handleClose() !Doesnt work! needs to be a fucntion but idfk how to do dat
+        handleClose()
     }
 
     return (
@@ -49,7 +49,10 @@ export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) 
                         <Form.Label>Budget</Form.Label>
                         <Form.Select
                             defaultValue={defaultBudgetId}
-                            ref={budgetIdRef}>
+                            ref={budgetIdRef}   
+                        >
+                            <option id={UNCATEGORIZED_BUDGET_ID}>Unused / Uncategorized</option>
+
                             {budgets.map(budget => (
                                 <option key={budget.id} value={budget.id}>
                                     {budget.name}
