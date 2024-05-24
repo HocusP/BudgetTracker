@@ -3,6 +3,7 @@ import { Button, Container } from 'react-bootstrap';
 import { Stack } from 'react-bootstrap';
 import BudgetCard from './Components/BudgetCard';
 import UncategorizedBudgetCard from './Components/UncategorizedBudgetCard';
+import TotalBudgetCard from './Components/TotalBudgetCard';
 import AddBudgetModal from './Components/AddBudgetModal';
 import AddExpenseModal from './Components/AddExpenseModal';
 import { useState } from 'react';
@@ -51,7 +52,8 @@ function App() {
               />
             )
           })}
-          <UncategorizedBudgetCard/>
+          <UncategorizedBudgetCard onAddExpenseClick={openAddExpenseModal}/>
+          <TotalBudgetCard/>
         </div>
       </Container>
       <AddBudgetModal
