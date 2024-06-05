@@ -1,4 +1,4 @@
-//Implement firebase in here??
+//istedet for local storage hadde det gått ann å bruke firebase database her for å ha ein backend. men har kje tid farh
 import { useState, useEffect } from "react"
 
 export default function useLocalStorage(key, defaultlValue) {
