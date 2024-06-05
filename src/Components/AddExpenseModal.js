@@ -34,7 +34,7 @@ export default function AddExpenseModal({
             <Form.Control ref={descriptionRef} type="text" required />
           </Form.Group>
           <Form.Group className="mb-3" controlId="amount">
-            <Form.Label>Amount</Form.Label>
+            <Form.Label>Amount (NOK)</Form.Label>
             <Form.Control
               ref={amountRef}
               type="number"

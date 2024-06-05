@@ -33,7 +33,7 @@ export default function AddBudgetModal({ show, handleClose }) {
                         
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="max">
-                        <Form.Label>Max Spend Amount</Form.Label>
+                        <Form.Label>Max Spend Amount (NOK)</Form.Label>
                         <Form.Control
                             ref={maxRef}
                             type="number"
